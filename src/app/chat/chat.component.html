@@ -1,11 +1,23 @@
-<ng-container *ngFor="let message of messages">
-  <div class="message" [ngClass]="{from: message.author === 'bot',to: message.author === 'user'}">
-    {{ message.content }}
-  </div>
-</ng-container>
-<label *ngIf="messages.length == 0; else dialogInfo" for="nameField">Chat Bot</label>
-<input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text" />
-<button (click)="sendMessage()">Send</button>
-<ng-template #dialogInfo>
+<div class="container">
+  <h1 class="">Chat Bot</h1>
+  <ng-container *ngFor="let message of messages">
+    <div class="message" [ngClass]="{from: message.author === 'bot',to: message.author === 'user'}">
+      {{ message.content }}
+    </div>
+  </ng-container>
+
+  <label *ngIf="messages.length == 0; else dialogInfo" for="nameField">Message</label>
+  <input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text" />
+  <button type="button" (click)="sendMessage()">
+    <i class="fa-solid fa-paper-plane-top"></i>
+  </button>
+  <ng-template #dialogInfo>
   <span [ngClass]="'float-right'">Total messages: {{ messages.length }}</span>
-</ng-template>
+  </ng-template>
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+</style>
+
+<!--  class="w-full bg-blue-400 text-white px-20 py-15" -->

@@ -12,7 +12,7 @@ export class ChatService {
    conversation = new Subject<Message[]>();
    messageMap:any = {
      "Hi" : "Hello",
-     "Who are you" : "My name is Test Sat Bot",
+     "Who are you?" : "My name is Test Sat Bot",
      "What is your role" : "Just guide for the user",
      "defaultmsg" : "I can't understand your text."
    }
